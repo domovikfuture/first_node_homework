@@ -2,7 +2,7 @@ const express = require("express");
 
 const webserver = express();
 
-const port = 3060;
+const port = 80;
 const dropletIP = '161.35.68.81'
 
 webserver.get("/", (req, res) => {
