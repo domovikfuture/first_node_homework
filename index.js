@@ -3,11 +3,12 @@ const express = require("express");
 const webserver = express();
 
 const port = 3060;
+const dropletIP = '161.35.68.81'
 
 webserver.get("/", (req, res) => {
   if (Object.keys(req.query).length === 0) {
     res.send(
-      `<form method=get action=http://localhost:3060/>
+      `<form method=get action=http://${dropletIP}:${port}/>
       <span>login</span>
       <input type=text name=login></input><br/>
       <span>password</span>
@@ -18,7 +19,7 @@ webserver.get("/", (req, res) => {
   }
   if (req.query.login && req.query.password) {
     res.send(
-      `<form method=get action=http://localhost:3060/>
+      `<form method=get action=http://${dropletIP}:${port}/>
       <span>login</span>
       <input type=text name=login></input><strong>your login: ${req.query.login}</strong><br/>
       <span>password</span>
@@ -28,7 +29,7 @@ webserver.get("/", (req, res) => {
     );
   } else {
     res.send(
-      `<form method=get action=http://localhost:3060/>
+      `<form method=get action=http://${dropletIP}:${port}/>
       <span>login</span>
       <input type=text name=login value=${req.query.login}></input><strong>validation error</strong><br/>
       <span>password</span>
