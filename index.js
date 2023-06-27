@@ -3,7 +3,6 @@ const express = require("express");
 const webserver = express();
 
 const port = 80;
-const dropletIP = '161.35.68.81'
 
 webserver.get("/", (req, res) => {
   if (Object.keys(req.query).length === 0) {
